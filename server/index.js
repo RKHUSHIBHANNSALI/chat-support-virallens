@@ -7,7 +7,7 @@ import dotenv from 'dotenv'
 
 dotenv.config();
 const app = express();
-app.use(cors({ origin: 'http://localhost:3000'}));
+app.use(cors({ origin: ['http://localhost:3000', 'https://chat-support-virallens-1.onrender.com/']}));
 
 app.use(express.json());
 
@@ -19,4 +19,3 @@ const port = process.env.PORT
 app.listen(port, ()=>{
     console.log(`Backend listening on the ${PORT}`)
 })
-
