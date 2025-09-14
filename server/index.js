@@ -7,7 +7,7 @@ import dotenv from 'dotenv'
 
 dotenv.config();
 const app = express();
-app.use(cors({ origin: ['http://localhost:3000', 'https://chat-support-virallens-1.onrender.com/']}));
+app.use(cors({ origin: ['http://localhost:3000', 'https://chat-support-virallens-1.onrender.com']}));
 
 app.use(express.json());
 
