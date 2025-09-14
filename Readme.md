@@ -39,6 +39,7 @@ A full-stack chat application that authenticates users using jwt , hashes passwo
 - MongoDB Atlas account or local MongoDB instance  
 - OpenRouter.ai API key  
 - Create `.env` files inside `server/` and specify the following PORT, MONGODB_URI, JWT_SECRET, API_KEY , OPENAI_BASE_URL
+- Create `.env` files inside `client/` and specify the following API_URL
 
 ### Installation
 
