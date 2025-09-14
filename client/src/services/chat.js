@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = 'http://localhost:5000';
+const API_URL = 'https://chat-support-virallens.onrender.com' || 'http://localhost:5000';
 
 export function getPreviousChats(token){
     return axios.get(`${API_URL}/chat/history`, {
