@@ -1,6 +1,6 @@
 # Minimal AI Customer Support Agent
 
-A full-stack chat application that authenticates users, lets them converse with an AI assistant, and persists each conversation in MongoDB.
+A full-stack chat application that authenticates users using jwt , hashes password using bcrypt , lets them converse with an AI assistant, and persists each conversation in MongoDB.
 
 ## Table of Contents
 
@@ -10,13 +10,7 @@ A full-stack chat application that authenticates users, lets them converse with 
   - [Prerequisites](#prerequisites)  
   - [Installation](#installation)  
   - [Environment Variables](#environment-variables)  
-- [Usage](#usage)  
-  - [Backend Scripts](#backend-scripts)  
-  - [Frontend Scripts](#frontend-scripts)  
 - [API Endpoints](#api-endpoints)  
-- [Project Structure](#project-structure)  
-- [Contributing](#contributing)  
-- [License](#license)  
 
 ## Features
 
@@ -35,7 +29,7 @@ A full-stack chat application that authenticates users, lets them converse with 
 | Authentication  | JWT · bcrypt                |
 | AI Integration  | OpenRouter.ai (openai SDK)  |
 | Frontend        | React · Axios · CSS Modules |
-| Env & DevOps    | dotenv · GitHub Desktop     |
+| Env & DevOps    | dotenv · GitHub Desktop  . onRender   |
 
 ## Getting Started
 
@@ -44,6 +38,7 @@ A full-stack chat application that authenticates users, lets them converse with 
 - Node.js v14+ and npm  
 - MongoDB Atlas account or local MongoDB instance  
 - OpenRouter.ai API key  
+- Create `.env` files inside `server/` and specify the following PORT, MONGODB_URI, JWT_SECRET, API_KEY , OPENAI_BASE_URL
 
 ### Installation
 
@@ -55,6 +50,12 @@ A full-stack chat application that authenticates users, lets them converse with 
 
 3. Enter the frontend directory using cd client and run npm start
 
+### API end points 
+
+1. /api/auth/signup to get the users signed up
+2. /api/auth/login to login the user and go ahead for the chat support 
+3. /chat/history to retrieve the previous conversations
+4. /chat/send to send the query and OpenRouter providing with the answers
 
 
 
