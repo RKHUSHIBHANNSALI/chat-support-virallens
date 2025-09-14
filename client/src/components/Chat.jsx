@@ -1,5 +1,6 @@
 import { getPreviousChats, sendMessage, logout } from "../services/chat.js";
  import { useRef, useState, useEffect } from "react";
+ import { useNavigate } from "react-router-dom";
  import "./Chat.css";
 
  export default function Chat() {
@@ -9,6 +10,7 @@ import { getPreviousChats, sendMessage, logout } from "../services/chat.js";
    const [error, setError] = useState("");
    const scrollRef = useRef();
    const token = localStorage.getItem("token");
+   const navigate = useNavigate();
 
    useEffect(() => {
      async function getHistory() {
@@ -78,15 +80,21 @@ import { getPreviousChats, sendMessage, logout } from "../services/chat.js";
      }
    };
 
+   const handleLogout = async()=>{
+    try {
+      await logout();
+      navigate('/login');
+    } catch (err) {
+      console.error('Logout failed:', err);
+    }
+   }
+
    return (
      <div className="chat-wrapper">
        <aside className="conversation-list">
          <button
            className="logout"
-           onClick={() => {
-             logout();
-             window.location = "/login";
-           }}
+           onClick={handleLogout}
          >
            Logout
          </button>

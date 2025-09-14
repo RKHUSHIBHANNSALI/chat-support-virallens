@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const API_URL =  'https://chat-support-virallens.onrender.com' || 'http://localhost:5000'
-
+// const API_URL =  'https://chat-support-virallens.onrender.com' || 'http://localhost:5000'
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 export async function login(email,password){
     const response = await axios.post(`${API_URL}/api/auth/login`, {
         email,
